@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -41,7 +40,6 @@
       z-index: 100;
     }
     .logo { font-weight: 700; font-size: 1.2rem; color: var(--purple); }
-    .nav-links { display: none; }
 
     /* HERO */
     #hero {
@@ -64,21 +62,9 @@
     #hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; margin-bottom: 8px; }
     #hero h1 span { color: var(--purple); }
     #hero p { color: var(--muted); font-size: 1.05rem; max-width: 480px; margin-bottom: 32px; }
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-    .btn {
-      padding: 11px 26px; border-radius: 8px;
-      font-family: 'Poppins', sans-serif;
-      font-size: .9rem; font-weight: 600;
-      cursor: pointer; border: none;
-      transition: all .2s;
-    }
-    .btn-solid { background: var(--purple); color: #fff; }
-    .btn-solid:hover { opacity: .85; transform: translateY(-2px); }
-    .btn-border { background: transparent; border: 2px solid var(--purple); color: var(--purple); }
-    .btn-border:hover { background: var(--purple); color: #fff; transform: translateY(-2px); }
 
     /* SECTION BASE */
-    section { padding: 80px 5%; max-width: 1100px; margin: 0 auto; }
+    section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
     section h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
     section h2 span { color: var(--purple); }
     .sub { color: var(--muted); margin-bottom: 40px; font-size: .95rem; }
@@ -96,50 +82,30 @@
       border-radius: 12px;
       overflow: hidden;
       transition: transform .2s, border-color .2s;
+      cursor: default;
     }
-    .card:hover { transform: translateY(-6px); border-color: var(--purple); }
+    .card.has-link { cursor: pointer; }
+    .card.has-link:hover { transform: translateY(-6px); border-color: var(--purple); }
+
     .card-top {
-      height: 140px;
+      height: 120px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 3rem;
+      font-size: 2.8rem;
     }
     .card-body { padding: 18px; }
-    .card-body h3 { font-size: 1rem; margin-bottom: 6px; }
-    .card-body p { color: var(--muted); font-size: .83rem; margin-bottom: 14px; }
-    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+    .card-num {
+      font-size: .7rem; font-weight: 700;
+      color: var(--purple); margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .card-body h3 { font-size: .95rem; margin-bottom: 6px; }
+    .card-body p { color: var(--muted); font-size: .82rem; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
     .tag {
-      font-size: .72rem; font-weight: 600;
+      font-size: .68rem; font-weight: 600;
       padding: 2px 9px; border-radius: 100px;
       background: rgba(108,99,255,.15);
       color: var(--purple);
-    }
-    .card-link { font-size: .82rem; color: var(--purple); }
-    .card-link:hover { text-decoration: underline; }
-
-    /* SOBRE */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .about-photo {
-      width: 220px; height: 220px;
-      border-radius: 16px;
-      background: var(--card);
-      border: 2px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 5rem;
-      margin: 0 auto;
-    }
-    .about-text p { color: var(--muted); margin-bottom: 20px; font-size: .95rem; }
-    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill {
-      padding: 6px 14px; border-radius: 8px;
-      font-size: .82rem; font-weight: 600;
-      background: rgba(108,99,255,.12);
-      border: 1px solid var(--border);
-      color: var(--text);
     }
 
     /* CONTATO */
@@ -190,23 +156,9 @@
     #top-btn.show { opacity: 1; pointer-events: all; }
     #top-btn:hover { transform: translateY(-3px); }
 
-    /* TOAST */
-    #toast {
-      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
-      background: #10b981; color: #fff;
-      padding: 12px 24px; border-radius: 8px;
-      font-size: .88rem; font-weight: 600;
-      transition: transform .3s, opacity .3s;
-      opacity: 0; z-index: 200;
-    }
-    #toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-
     /* RESPONSIVO */
     @media (max-width: 768px) {
       .grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; text-align: center; }
-      .nav-links { display: none; }
-      .skills { justify-content: center; }
     }
     @media (min-width: 769px) and (max-width: 1024px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
@@ -218,7 +170,6 @@
   <!-- NAV -->
   <nav>
     <span class="logo">&lt;SeuNome /&gt;</span>
-
   </nav>
 
   <!-- HERO -->
@@ -226,80 +177,22 @@
     <div class="avatar">🧑‍💻</div>
     <h1>Olá, sou <span>Seu Nome</span></h1>
     <p>Desenvolvedor Full-Stack apaixonado por criar interfaces bonitas e produtos que funcionam de verdade.</p>
-
   </section>
 
-  <div style="max-width:1100px;margin:0 auto;padding:0 5%;"><hr /></div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 5%;"><hr /></div>
 
   <!-- PROJETOS -->
   <section id="projects">
     <h2>Meus <span>Projetos</span></h2>
     <p class="sub">Uma seleção do que já construí.</p>
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-top" style="background:linear-gradient(135deg,#1e1b4b,#312e81)">🌿</div>
-        <div class="card-body">
-          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
-          <h3>EcoTrack</h3>
-          <p>App de rastreamento de pegada de carbono com dashboard interativo.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top" style="background:linear-gradient(135deg,#0f3460,#533483)">🍱</div>
-        <div class="card-body">
-          <div class="tags"><span class="tag">Vue.js</span><span class="tag">Firebase</span></div>
-          <h3>FoodShare</h3>
-          <p>Plataforma de doação de alimentos entre restaurantes e ONGs.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top" style="background:linear-gradient(135deg,#1e3c72,#2a5298)">💪</div>
-        <div class="card-body">
-          <div class="tags"><span class="tag">Flutter</span><span class="tag">Django</span></div>
-          <h3>FitJourney</h3>
-          <p>App mobile de treino personalizado com inteligência artificial.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top" style="background:linear-gradient(135deg,#2d1b69,#11998e)">✍️</div>
-        <div class="card-body">
-          <div class="tags"><span class="tag">Next.js</span><span class="tag">GraphQL</span></div>
-          <h3>DevBlog</h3>
-          <p>Blog técnico com Markdown, modo escuro e pesquisa full-text.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top" style="background:linear-gradient(135deg,#134e5e,#71b280)">🌤️</div>
-        <div class="card-body">
-          <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span></div>
-          <h3>WeatherPro</h3>
-          <p>Previsão climática com machine learning e visualizações geoespaciais.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-top" style="background:linear-gradient(135deg,#4a0072,#7b2ff7)">🎨</div>
-        <div class="card-body">
-          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
-          <h3>Portfolio Generator</h3>
-          <p>Ferramenta no-code para criar portfólios em minutos.</p>
-        </div>
-      </div>
-
-    </div>
+    <div class="grid" id="grid"></div>
   </section>
 
-  <div style="max-width:1100px;margin:0 auto;padding:0 5%;"><hr /></div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 5%;"><hr /></div>
 
   <!-- CONTATO -->
   <section id="contact">
     <h2>Entre em <span>Contato</span></h2>
-    <p class="sub">Responderei em até 24h. Vamos conversar!</p>
     <div class="contact-card">
       <a href="mailto:contato@seusite.dev" class="email-btn">
         <i class="fas fa-envelope"></i> contato@seusite.dev
@@ -312,35 +205,74 @@
     <p>&copy; <span id="year"></span> Seu Nome. Feito com <span>♥</span></p>
   </footer>
 
-  <!-- Back to top -->
   <button id="top-btn" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
-  <div id="toast">✅ Mensagem enviada!</div>
 
   <script>
-    // Ano
+    /* ================================================================
+       ✏️  EDITE APENAS AQUI — dados de todos os projetos
+       - title  : nome do projeto
+       - desc   : descrição curta
+       - icon   : emoji que aparece no card
+       - tag    : categoria (ex: 'Código', 'Apresentação', 'Link')
+       - link   : URL externa — use '' para deixar sem link
+    ================================================================ */
+    const PROJECTS = [
+      { title: 'Projeto 1 — ..........',     desc: '............',   icon: '⚡', tag: 'Código',        link: '..............' },
+     ];
+
+    /* ================================================================
+       🎨 CORES DOS CARDS — um gradiente por projeto (ordem sequencial)
+    ================================================================ */
+    const GRADIENTS = [
+      'linear-gradient(135deg,#1e1b4b,#312e81)',
+      'linear-gradient(135deg,#0f3460,#533483)',
+      'linear-gradient(135deg,#1e3c72,#2a5298)',
+      'linear-gradient(135deg,#2d1b69,#11998e)',
+      'linear-gradient(135deg,#134e5e,#71b280)',
+      'linear-gradient(135deg,#4a0072,#7b2ff7)',
+      'linear-gradient(135deg,#0d0d1a,#6C63FF)',
+      'linear-gradient(135deg,#1a1a2e,#e94560)',
+      'linear-gradient(135deg,#0f2027,#203a43)',
+      'linear-gradient(135deg,#232526,#414345)',
+      'linear-gradient(135deg,#16213e,#0f3460)',
+      'linear-gradient(135deg,#1f0036,#7b2ff7)',
+    ];
+
+    /* ── Renderiza os cards ───────────────────────────────────────── */
+    const grid = document.getElementById('grid');
+
+    PROJECTS.forEach((p, i) => {
+      const grad    = GRADIENTS[i % GRADIENTS.length];
+      const hasLink = p.link && p.link.trim() !== '';
+
+      const card = document.createElement('div');
+      card.className = 'card' + (hasLink ? ' has-link' : '');
+
+      card.innerHTML = `
+        <div class="card-top" style="background:${grad}">${p.icon}</div>
+        <div class="card-body">
+          <div class="tags"><span class="tag">${p.tag}</span></div>
+          <div class="card-num">Nº ${String(i + 1).padStart(2, '0')}</div>
+          <h3>${p.title}</h3>
+          <p>${p.desc}</p>
+        </div>
+      `;
+
+      if (hasLink) {
+        card.addEventListener('click', () => window.open(p.link, '_blank'));
+        card.title = 'Clique para abrir o projeto';
+      }
+
+      grid.appendChild(card);
+    });
+
+    /* ── Ano dinâmico ────────────────────────────────────────────── */
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Scroll → botão topo
+    /* ── Botão voltar ao topo ────────────────────────────────────── */
     const topBtn = document.getElementById('top-btn');
     window.addEventListener('scroll', () => topBtn.classList.toggle('show', scrollY > 300));
     topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const el = document.querySelector(a.getAttribute('href'));
-        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
-      });
-    });
-
-    // Formulário
-    document.getElementById('form').addEventListener('submit', e => {
-      e.preventDefault();
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 3000);
-      e.target.reset();
-    });
   </script>
 </body>
 </html>
